@@ -1,0 +1,213 @@
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+    binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
+    output = "/home/ubuntu/crochet_app/app/node_modules/.prisma/client"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  password      String?
+  firstName     String?
+  lastName      String?
+  skillLevel    String?   @default("beginner") // beginner, intermediate, advanced, expert
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  patterns      Pattern[]
+  projects      Project[]
+  favorites     PatternFavorite[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Pattern {
+  id             String            @id @default(cuid())
+  title          String
+  description    String?           @db.Text
+  itemType       String            // hat, scarf, blanket, sweater, amigurumi
+  skillLevel     String            // beginner, intermediate, advanced, expert
+  imageUrl       String?
+  estimatedTime  Int?              // minutes
+  isPublic       Boolean           @default(true)
+  isCustom       Boolean           @default(false) // generated from measurements
+  authorId       String
+  author         User              @relation(fields: [authorId], references: [id])
+  
+  // Pattern specifics
+  yarnWeight     String            // lace, sport, dk, worsted, chunky, etc
+  hookSize       String            // hook size recommendation
+  gauge          String?           // stitches per inch info
+  difficulty     String?           // additional difficulty notes
+  
+  // Custom pattern data (for generated patterns)
+  measurements   Json?             // stored measurements for custom patterns
+  
+  instructions   PatternRow[]
+  materials      PatternMaterial[]
+  projects       Project[]
+  favorites      PatternFavorite[]
+  
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  
+  @@index([itemType])
+  @@index([skillLevel])
+  @@index([isPublic])
+}
+
+model PatternRow {
+  id          String   @id @default(cuid())
+  patternId   String
+  pattern     Pattern  @relation(fields: [patternId], references: [id], onDelete: Cascade)
+  rowNumber   Int
+  rowType     String   @default("instruction") // header, foundation, instruction, note
+  instruction String   @db.Text
+  stitchCount Int?
+  notes       String?  @db.Text
+  
+  @@index([patternId, rowNumber])
+}
+
+model PatternMaterial {
+  id        String  @id @default(cuid())
+  patternId String
+  pattern   Pattern @relation(fields: [patternId], references: [id], onDelete: Cascade)
+  type      String  // yarn, hook, notions
+  name      String
+  amount    String? // quantity needed
+  notes     String? @db.Text
+}
+
+model PatternFavorite {
+  id        String  @id @default(cuid())
+  userId    String
+  patternId String
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pattern   Pattern @relation(fields: [patternId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  
+  @@unique([userId, patternId])
+}
+
+model Project {
+  id            String            @id @default(cuid())
+  name          String
+  notes         String?           @db.Text
+  status        String            @default("in_progress") // not_started, in_progress, completed, on_hold
+  currentRow    Int               @default(1)
+  imageUrl      String?
+  startedAt     DateTime?
+  completedAt   DateTime?
+  
+  userId        String
+  user          User              @relation(fields: [userId], references: [id])
+  patternId     String?
+  pattern       Pattern?          @relation(fields: [patternId], references: [id])
+  
+  progress      ProjectProgress[]
+  
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+  
+  @@index([userId])
+  @@index([status])
+}
+
+model ProjectProgress {
+  id        String   @id @default(cuid())
+  projectId String
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  rowNumber Int
+  completed Boolean  @default(false)
+  notes     String?  @db.Text
+  createdAt DateTime @default(now())
+  
+  @@unique([projectId, rowNumber])
+}
+
+model YarnCalculation {
+  id          String   @id @default(cuid())
+  itemType    String   // hat, scarf, blanket, etc
+  size        String   // dimensions or size category
+  yarnWeight  String   // yarn weight category
+  yardage     Int      // estimated yards needed
+  weightGrams Int?     // estimated weight in grams
+  notes       String?  @db.Text
+  createdAt   DateTime @default(now())
+  
+  @@index([itemType, yarnWeight])
+}
+
+model StitchLibrary {
+  id           String   @id @default(cuid())
+  name         String   @unique
+  abbreviation String   @unique
+  category     String   // basic, special, post, increase, decrease
+  difficulty   String   // beginner, intermediate, advanced
+  description  String   @db.Text
+  instructions String   @db.Text
+  tips         String?  @db.Text
+  imageUrl     String?
+  symbol       String?  // crochet symbol if applicable
+  
+  @@index([category])
+  @@index([difficulty])
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String?
+  message   String   @db.Text
+  formType  String   @default("contact") // contact, feedback, suggestion
+  status    String   @default("new") // new, read, responded
+  createdAt DateTime @default(now())
+}

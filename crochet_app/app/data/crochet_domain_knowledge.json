@@ -1,0 +1,630 @@
+{
+  "stitches": {
+    "basic_stitches": {
+      "ch": {
+        "name": "Chain",
+        "abbreviation": "ch",
+        "symbol": "○",
+        "description": "The foundation stitch used to start most crochet projects",
+        "instructions": "Yarn over, pull through loop on hook",
+        "height": "Foundation",
+        "uses": ["Starting rows", "Creating spaces", "Turning chains"]
+      },
+      "sl_st": {
+        "name": "Slip Stitch",
+        "abbreviation": "sl st",
+        "symbol": "•",
+        "description": "The shortest stitch, used for joining and moving without adding height",
+        "instructions": "Insert hook into stitch, yarn over, pull through both loops on hook in one motion",
+        "height": "Minimal",
+        "uses": ["Joining rounds", "Moving across stitches", "Finishing edges"]
+      },
+      "sc": {
+        "name": "Single Crochet",
+        "abbreviation": "sc",
+        "uk_term": "double crochet (dc)",
+        "symbol": "+",
+        "description": "A dense, short stitch ideal for solid fabrics",
+        "instructions": "Insert hook into stitch, yarn over, pull up loop (2 loops on hook), yarn over, pull through both loops",
+        "height": "Short",
+        "turning_chain": 1,
+        "uses": ["Dense fabrics", "Amigurumi", "Edges"]
+      },
+      "hdc": {
+        "name": "Half Double Crochet",
+        "abbreviation": "hdc",
+        "uk_term": "half treble crochet (htr)",
+        "symbol": "T",
+        "description": "Taller than single crochet, shorter than double crochet",
+        "instructions": "Yarn over, insert hook, yarn over, pull up loop (3 loops on hook), yarn over, pull through all 3 loops",
+        "height": "Medium-short",
+        "turning_chain": 2,
+        "uses": ["Quick-working fabrics", "Textured stitches", "Blankets"]
+      },
+      "dc": {
+        "name": "Double Crochet",
+        "abbreviation": "dc",
+        "uk_term": "treble crochet (tr)",
+        "symbol": "T",
+        "description": "A tall, flexible stitch creating open, drapey fabric",
+        "instructions": "Yarn over, insert hook, yarn over, pull up loop, yarn over, pull through 2 loops, yarn over, pull through last 2 loops",
+        "height": "Tall",
+        "turning_chain": 3,
+        "uses": ["Granny squares", "Blankets", "Lacy patterns"]
+      },
+      "tr": {
+        "name": "Treble Crochet",
+        "abbreviation": "tr",
+        "uk_term": "double treble crochet (dtr)",
+        "symbol": "T",
+        "description": "The tallest basic stitch, creating very open fabric",
+        "instructions": "Yarn over twice, insert hook, yarn over, pull up loop, [yarn over, pull through 2 loops] 3 times",
+        "height": "Very tall",
+        "turning_chain": 4,
+        "uses": ["Lace patterns", "Quick blankets", "Decorative edges"]
+      }
+    },
+    "special_stitches": {
+      "bobble": {
+        "abbreviation": "bo",
+        "description": "A raised bump created by multiple partial stitches worked together",
+        "instructions": "Work 3-5 partial double crochets in same stitch, yarn over, pull through all loops on hook"
+      },
+      "cluster": {
+        "abbreviation": "CL",
+        "description": "Multiple complete stitches worked together at the top",
+        "instructions": "Work 2-4 stitches leaving last loop of each on hook, yarn over, pull through all loops"
+      },
+      "popcorn": {
+        "abbreviation": "pc",
+        "description": "Multiple stitches in same place joined at the top",
+        "instructions": "Work 4-5 dc in same stitch, remove hook from loop, insert in top of first dc, pull working loop through"
+      },
+      "shell": {
+        "abbreviation": "sh",
+        "description": "A fan-like group of stitches worked in same space",
+        "instructions": "Work specified number of stitches (usually 5-7 dc) in same stitch or space"
+      },
+      "puff": {
+        "abbreviation": "ps",
+        "description": "A puffy stitch created by multiple yarn overs",
+        "instructions": "Yarn over, insert hook, pull up loop, repeat 3-5 times in same stitch, yarn over, pull through all loops"
+      }
+    },
+    "post_stitches": {
+      "fpdc": {
+        "name": "Front Post Double Crochet",
+        "abbreviation": "FPdc",
+        "description": "Creates a raised vertical line on the front",
+        "instructions": "Yarn over, insert hook from front to back to front around post of designated stitch, complete as normal dc"
+      },
+      "bpdc": {
+        "name": "Back Post Double Crochet", 
+        "abbreviation": "BPdc",
+        "description": "Creates a recessed line, with raised line appearing on back",
+        "instructions": "Yarn over, insert hook from back to front to back around post of designated stitch, complete as normal dc"
+      }
+    },
+    "increase_decrease": {
+      "inc": {
+        "name": "Increase",
+        "abbreviation": "inc",
+        "description": "Work 2 or more stitches in same stitch to increase stitch count",
+        "instructions": "Work 2 stitches of same type in same stitch from previous row"
+      },
+      "dec": {
+        "name": "Decrease", 
+        "abbreviation": "dec",
+        "description": "Work 2 or more stitches together to reduce stitch count",
+        "instructions": "Draw up loops in 2 stitches, yarn over, pull through all loops"
+      },
+      "sc2tog": {
+        "name": "Single Crochet 2 Together",
+        "abbreviation": "sc2tog",
+        "description": "Decrease by working 2 single crochets together",
+        "instructions": "Insert hook in first stitch, pull up loop, insert hook in next stitch, pull up loop, yarn over, pull through all 3 loops"
+      },
+      "invisible_decrease": {
+        "name": "Invisible Decrease",
+        "description": "A decrease method that creates a neater finish for amigurumi",
+        "instructions": "Insert hook under front loops only of next 2 stitches, yarn over, pull through both loops, yarn over, pull through 2 loops on hook"
+      }
+    },
+    "symbol_reading": {
+      "chart_basics": {
+        "description": "Crochet symbol charts show spatial relationships of stitches",
+        "reading_direction": "Read charts from bottom to top, right to left for rows, counterclockwise for rounds",
+        "starting_point": "Often marked with arrow or number",
+        "repeat_indicators": "Asterisks (*) show repeat sections"
+      },
+      "us_vs_uk_terms": {
+        "note": "US terms are generally one step shorter than UK terms",
+        "conversions": {
+          "US slip stitch": "UK slip stitch",
+          "US single crochet": "UK double crochet", 
+          "US half double crochet": "UK half treble",
+          "US double crochet": "UK treble",
+          "US treble": "UK double treble"
+        }
+      }
+    },
+    "abbreviations": {
+      "common": {
+        "alt": "alternate",
+        "approx": "approximately", 
+        "beg": "begin/beginning",
+        "bet": "between",
+        "BLO": "back loop only",
+        "CA/CB": "color A/color B",
+        "ch": "chain",
+        "ch-sp": "chain space",
+        "cont": "continue",
+        "dec": "decrease",
+        "FL/FLO": "front loop/front loop only",
+        "foll": "following",
+        "hk": "hook",
+        "inc": "increase",
+        "lp": "loop",
+        "MC": "main color",
+        "pat": "pattern",
+        "prev": "previous",
+        "rem": "remaining",
+        "rep": "repeat",
+        "rnd": "round",
+        "RS": "right side",
+        "sk": "skip",
+        "sp": "space",
+        "st": "stitch",
+        "tbl": "through back loop",
+        "tch": "turning chain",
+        "tog": "together",
+        "WS": "wrong side",
+        "yo": "yarn over"
+      }
+    }
+  },
+  "yarn_weights": {
+    "cyc_system": {
+      "description": "Craft Yarn Council standardized yarn weight system using categories 0-7",
+      "categories": {
+        "0": {
+          "name": "Lace",
+          "other_names": ["Fingering", "10-count crochet thread"],
+          "knit_gauge_range": "33-40 stitches per 4 inches",
+          "crochet_gauge_range": "32-42 double crochets per 4 inches", 
+          "hook_size_mm": "1.6-2.25",
+          "hook_size_us": "Steel 6-8, B-1",
+          "wpi_range": "30-40+",
+          "typical_ply": "1-3",
+          "uses": ["Lace shawls", "Doilies", "Thread work"]
+        },
+        "1": {
+          "name": "Super Fine",
+          "other_names": ["Sock", "Fingering", "Baby"],
+          "knit_gauge_range": "27-32 stitches per 4 inches",
+          "crochet_gauge_range": "21-32 stitches per 4 inches",
+          "hook_size_mm": "2.25-3.5",
+          "hook_size_us": "B-1 to E-4",
+          "wpi_range": "14-30",
+          "typical_ply": "4",
+          "uses": ["Socks", "Baby items", "Fine garments"]
+        },
+        "2": {
+          "name": "Fine", 
+          "other_names": ["Sport", "Baby"],
+          "knit_gauge_range": "23-26 stitches per 4 inches",
+          "crochet_gauge_range": "16-20 stitches per 4 inches",
+          "hook_size_mm": "3.5-4.5",
+          "hook_size_us": "E-4 to 7",
+          "wpi_range": "12-18",
+          "typical_ply": "5",
+          "uses": ["Light garments", "Baby clothes", "Blankets"]
+        },
+        "3": {
+          "name": "Light",
+          "other_names": ["DK", "Light Worsted"],
+          "knit_gauge_range": "21-24 stitches per 4 inches",
+          "crochet_gauge_range": "12-17 stitches per 4 inches", 
+          "hook_size_mm": "4.5-5.5",
+          "hook_size_us": "7 to I-9",
+          "wpi_range": "11-15",
+          "typical_ply": "8",
+          "uses": ["Sweaters", "Baby blankets", "Light accessories"]
+        },
+        "4": {
+          "name": "Medium",
+          "other_names": ["Worsted", "Afghan", "Aran"],
+          "knit_gauge_range": "16-20 stitches per 4 inches",
+          "crochet_gauge_range": "11-14 stitches per 4 inches",
+          "hook_size_mm": "5.5-6.5", 
+          "hook_size_us": "I-9 to K-10.5",
+          "wpi_range": "9-12",
+          "typical_ply": "10",
+          "uses": ["Sweaters", "Blankets", "Hats", "Scarves"]
+        },
+        "5": {
+          "name": "Bulky",
+          "other_names": ["Chunky", "Craft", "Rug"],
+          "knit_gauge_range": "12-15 stitches per 4 inches",
+          "crochet_gauge_range": "8-11 stitches per 4 inches",
+          "hook_size_mm": "6.5-9",
+          "hook_size_us": "K-10.5 to M-13",
+          "wpi_range": "6-9", 
+          "typical_ply": "12",
+          "uses": ["Quick projects", "Rugs", "Heavy sweaters"]
+        },
+        "6": {
+          "name": "Super Bulky",
+          "other_names": ["Super Chunky", "Roving"],
+          "knit_gauge_range": "7-11 stitches per 4 inches",
+          "crochet_gauge_range": "7-9 stitches per 4 inches",
+          "hook_size_mm": "9-15",
+          "hook_size_us": "M-13 to Q",
+          "wpi_range": "5-6",
+          "typical_ply": "14",
+          "uses": ["Very quick projects", "Arm knitting", "Giant blankets"]
+        },
+        "7": {
+          "name": "Jumbo", 
+          "other_names": ["Jumbo", "Roving"],
+          "knit_gauge_range": "6 stitches or fewer per 4 inches",
+          "crochet_gauge_range": "6 stitches or fewer per 4 inches",
+          "hook_size_mm": "15+",
+          "hook_size_us": "Q and larger",
+          "wpi_range": "1-4",
+          "typical_ply": "16+",
+          "uses": ["Extreme chunky projects", "Art pieces", "Giant blankets"]
+        }
+      }
+    },
+    "hook_conversions": {
+      "metric_to_us": {
+        "2.00": "A-0/B-1",
+        "2.25": "B-1",
+        "2.50": "C-2", 
+        "2.75": "C-2",
+        "3.00": "2.5",
+        "3.25": "D-3",
+        "3.50": "E-4",
+        "3.75": "F-5",
+        "4.00": "G-6",
+        "4.25": "G-6",
+        "4.50": "7",
+        "5.00": "H-8",
+        "5.25": "I-9",
+        "5.50": "I-9", 
+        "6.00": "J-10",
+        "6.50": "K-10.5",
+        "7.00": "K-10.75",
+        "8.00": "L-11",
+        "9.00": "M-13",
+        "10.00": "N-15",
+        "11.50": "P-16",
+        "15.00": "P/Q",
+        "16.00": "Q",
+        "19.00": "S-35",
+        "25.00": "T/U/X"
+      },
+      "steel_hooks": {
+        "0.50": "18",
+        "0.60": "12", 
+        "0.75": "14",
+        "0.85": "13",
+        "1.00": "12",
+        "1.25": "10",
+        "1.50": "8",
+        "1.75": "6"
+      }
+    },
+    "wpi_measurement": {
+      "description": "Wraps Per Inch - method to measure yarn thickness",
+      "how_to_measure": "Wrap yarn around ruler for 1 inch, count wraps",
+      "tips": ["Wrap snugly but not tightly", "Measure multiple times and average", "Use for unlabeled or handspun yarns"]
+    }
+  },
+  "gauge_math": {
+    "formulas": {
+      "stitches_per_inch": {
+        "formula": "Stitches per inch = Number of stitches counted / Width in inches",
+        "example": "If 20 stitches measure 4 inches: 20 ÷ 4 = 5 stitches per inch"
+      },
+      "rows_per_inch": {
+        "formula": "Rows per inch = Number of rows counted / Height in inches", 
+        "example": "If 16 rows measure 4 inches: 16 ÷ 4 = 4 rows per inch"
+      },
+      "stitch_count_calculation": {
+        "formula": "Required stitches = Desired width (inches) × Stitches per inch",
+        "example": "For 10-inch width at 5 stitches per inch: 10 × 5 = 50 stitches needed"
+      },
+      "row_count_calculation": {
+        "formula": "Required rows = Desired height (inches) × Rows per inch",
+        "example": "For 8-inch height at 4 rows per inch: 8 × 4 = 32 rows needed"
+      }
+    },
+    "gauge_swatch_process": {
+      "step_1": "Use project yarn, hook, and stitch pattern",
+      "step_2": "Make swatch at least 4×4 inches (preferably 5×5 inches)",
+      "step_3": "Block swatch as you would final project",
+      "step_4": "Lay flat on hard surface without stretching",
+      "step_5": "Measure interior 4 inches, avoiding edges",
+      "step_6": "Count stitches horizontally and rows vertically",
+      "step_7": "Calculate using formulas above"
+    },
+    "adjustments": {
+      "too_many_stitches": "Use larger hook to loosen gauge",
+      "too_few_stitches": "Use smaller hook to tighten gauge",
+      "hook_size_changes": "Adjust by 0.5mm increments and retest"
+    },
+    "ease_calculations": {
+      "positive_ease": "Garment larger than body measurement for loose fit",
+      "negative_ease": "Garment smaller than body measurement for tight fit", 
+      "zero_ease": "Garment matches body measurement exactly",
+      "typical_ease_amounts": {
+        "close_fit": "0-2 inches",
+        "standard_fit": "3-4 inches", 
+        "loose_fit": "5-6 inches",
+        "oversized": "7+ inches"
+      },
+      "ease_formula": "Finished measurement = Body measurement + Ease allowance"
+    }
+  },
+  "pattern_principles": {
+    "hats": {
+      "crown_formula": {
+        "basic_diameter": "Head circumference ÷ π (3.14)",
+        "adjusted_for_stretch": "(Head circumference - 1 inch) ÷ π",
+        "alternative_formula": "Head circumference ÷ (1.1 × π) for 10% stretch factor"
+      },
+      "standard_sizes": {
+        "micro_preemie": {
+          "head_circumference": "9.5 inches (24 cm)",
+          "crown_diameter": "2.75 inches (7 cm)",
+          "hat_height": "4.25 inches"
+        },
+        "preemie": {
+          "head_circumference": "11.5 inches (29 cm)",
+          "crown_diameter": "3.25 inches (8.5 cm)", 
+          "hat_height": "4.75 inches"
+        },
+        "newborn": {
+          "head_circumference": "13 inches (33 cm)",
+          "crown_diameter": "3.75 inches (9.5 cm)",
+          "hat_height": "5.25 inches"
+        },
+        "0_3_months": {
+          "head_circumference": "15 inches (37 cm)",
+          "crown_diameter": "4.25 inches (11 cm)",
+          "hat_height": "5.75 inches"
+        },
+        "3_6_months": {
+          "head_circumference": "16 inches (41 cm)",
+          "crown_diameter": "4.75 inches (12 cm)",
+          "hat_height": "6.25 inches"
+        },
+        "6_12_months": {
+          "head_circumference": "17 inches (44 cm)",
+          "crown_diameter": "5 inches (12.5 cm)",
+          "hat_height": "6.5 inches"
+        },
+        "toddler": {
+          "head_circumference": "18.5 inches (48 cm)",
+          "crown_diameter": "5.33 inches (13.5 cm)",
+          "hat_height": "6.75 inches"
+        },
+        "child": {
+          "head_circumference": "20 inches (50 cm)", 
+          "crown_diameter": "5.75 inches (14.5 cm)",
+          "hat_height": "7.25 inches"
+        },
+        "teen": {
+          "head_circumference": "21.5 inches (55 cm)",
+          "crown_diameter": "6.25 inches (16 cm)",
+          "hat_height": "7.75 inches"
+        },
+        "adult_woman": {
+          "head_circumference": "22.5 inches (57 cm)",
+          "crown_diameter": "6.5 inches (16.5 cm)",
+          "hat_height": "8 inches"
+        },
+        "adult_man": {
+          "head_circumference": "24 inches (61 cm)",
+          "crown_diameter": "7 inches (18 cm)",
+          "hat_height": "8.5 inches"
+        }
+      },
+      "construction_method": {
+        "top_down": "Start with crown, increase to full circumference, then work even for sides",
+        "bottom_up": "Start with band, work up to crown, then decrease to close",
+        "side_to_side": "Work from ear to ear, seam at back"
+      },
+      "crown_shaping": "Start with 6-12 stitches in magic ring, increase evenly until desired diameter reached"
+    },
+    "scarves": {
+      "standard_sizes": {
+        "children_4_7": {
+          "width": "3-3.5 inches",
+          "length": "36 inches"
+        },
+        "children_8_12": {
+          "width": "4-5 inches", 
+          "length": "50-60 inches"
+        },
+        "adult_women": {
+          "width": "6-8 inches",
+          "length": "60-70 inches"
+        },
+        "adult_men": {
+          "width": "6-10 inches",
+          "length": "60-75 inches"
+        }
+      },
+      "style_variations": {
+        "cowl": {
+          "width": "3-4 inches",
+          "length": "25-35 inches (to form loop)"
+        },
+        "infinity": {
+          "width": "7-8 inches",
+          "length": "50-80 inches"
+        },
+        "blanket_scarf": {
+          "width": "10-12 inches", 
+          "length": "80-100 inches"
+        },
+        "wrap": {
+          "width": "20-30 inches",
+          "length": "70-85 inches"
+        }
+      },
+      "construction_tips": {
+        "prevent_curling": "Use border stitches or blocking",
+        "length_guide": "Use arm span as rough guide for length",
+        "width_considerations": "Wider scarves for fashion, narrower for warmth"
+      }
+    },
+    "blankets": {
+      "standard_sizes": {
+        "lovey": "12×12 inches",
+        "baby": "14×16 inches",
+        "cradle": "14×30 inches", 
+        "premie": "18×24 inches",
+        "stroller": "22-30×30-36 inches",
+        "receiving": "40×40 inches",
+        "crib": "45×60 inches",
+        "lapghan": "36×48 inches",
+        "throw": "50×60 inches",
+        "afghan": "50×65 inches",
+        "twin": "65×90 inches",
+        "full": "85×90 inches",
+        "queen": "90×90-100 inches",
+        "king": "108×90-100 inches"
+      },
+      "calculation_process": {
+        "step_1": "Create gauge swatch (minimum 4×4 inches)",
+        "step_2": "Measure stitches and rows per inch",
+        "step_3": "Calculate total stitches needed: width × stitches per inch",
+        "step_4": "Calculate total rows needed: length × rows per inch", 
+        "step_5": "Adjust for stitch multiples if using patterned stitches",
+        "step_6": "Add turning chains to row count"
+      },
+      "construction_methods": {
+        "single_panel": "Work as one large rectangle",
+        "strips": "Work multiple strips and join",
+        "motifs": "Create squares/hexagons and join",
+        "corner_to_corner": "Work diagonally from corner"
+      }
+    },
+    "amigurumi": {
+      "basic_anatomy": {
+        "head": "Usually largest part, often a sphere",
+        "body": "Can be sphere, cylinder, or pear shape",
+        "arms_legs": "Cylinders or tapered tubes",
+        "ears_details": "Small shapes attached after main construction"
+      },
+      "construction_principles": {
+        "work_in_spiral": "Continuous rounds without joining for smooth shaping",
+        "stuff_as_you_go": "Stuff before opening gets too small",
+        "use_safety_eyes": "Insert before stuffing and closing",
+        "invisible_finish": "Use invisible decrease for neat closure"
+      },
+      "basic_shapes": {
+        "sphere": "Start with 6 sc in magic ring, increase 6 stitches per round until desired size, work even rounds, then decrease",
+        "cylinder": "Start with desired circumference, work even throughout",
+        "cone": "Start small, increase gradually to desired size",
+        "flat_circle": "Increase 6 stitches per round indefinitely"
+      },
+      "safety_considerations": {
+        "secure_attachments": "Ensure all parts firmly attached",
+        "avoid_small_parts": "For children under 3 years",
+        "use_safety_eyes": "Safer than buttons for young children",
+        "check_for_gaps": "Stuffing should not show through stitches"
+      }
+    }
+  },
+  "shaping_techniques": {
+    "increase_formulas": {
+      "even_spacing_formula": "(Desired end stitch count ÷ Increase number) - 2 = Stitches between increases",
+      "example": "To go from 20 to 24 stitches (4 increases): 24 ÷ 4 = 6, 6 - 2 = 4 stitches between each increase",
+      "process": [
+        "Calculate number of increases needed",
+        "Apply formula for spacing",
+        "Work pattern across row/round",
+        "Adjust for non-divisible numbers by distributing extras"
+      ]
+    },
+    "decrease_formulas": {
+      "even_spacing_formula": "(Current stitch count ÷ Decrease number) - 2 = Stitches between decreases", 
+      "example": "To go from 24 to 18 stitches (6 decreases): 24 ÷ 6 = 4, 4 - 2 = 2 stitches between each decrease",
+      "invisible_decrease": "Insert hook under front loops only of 2 stitches, yarn over, pull through both, yarn over, pull through 2 loops"
+    },
+    "raglan_shaping": {
+      "basic_concept": "Diagonal seams from neck to underarm, increases at 4 raglan lines",
+      "standard_increase": "8 stitches per increase round (2 at each raglan line)",
+      "stitch_distribution": {
+        "back_neck": "5.5-7 inches typically",
+        "sleeve_stitches": "About 30% of back neck stitches each",
+        "front_neck": "Minimal stitches for shaped neckline"
+      },
+      "compound_raglan": {
+        "concept": "Varying increase rates for better fit",
+        "pattern": "Fast increases for shoulders, slower for mid-yoke, potentially faster again near underarm",
+        "benefits": "Better accommodates human body proportions"
+      },
+      "asymmetric_raglan": {
+        "concept": "Different increase rates for front vs back",
+        "reason": "Back body typically longer than front",
+        "method": "Add short rows or extra increases at back neck"
+      }
+    },
+    "sphere_construction": {
+      "basic_method": {
+        "start": "6 single crochet in magic ring",
+        "increase_phase": "Increase 6 stitches per round until desired diameter",
+        "middle_phase": "Work even rounds (no increases/decreases) equal to increase rounds plus one",
+        "decrease_phase": "Decrease 6 stitches per round, mirroring increase pattern"
+      },
+      "round_vs_angular": {
+        "round_method": "Offset increases in every other round to prevent corners",
+        "angular_method": "Stack increases directly above previous round (creates hexagonal shape)"
+      },
+      "increase_rounds_example": [
+        "Round 1: 6 sc in magic ring",
+        "Round 2: Increase in each stitch (12 stitches)",
+        "Round 3: *1 sc, increase* repeat (18 stitches)", 
+        "Round 4: *2 sc, increase* repeat (24 stitches)",
+        "Round 5: *3 sc, increase* repeat (30 stitches)",
+        "Round 6: *4 sc, increase* repeat (36 stitches)"
+      ],
+      "finishing_tips": [
+        "Stuff before opening gets too small",
+        "Use invisible decrease for neater finish",
+        "Pull yarn tail through remaining stitches to close"
+      ]
+    },
+    "common_shaping_scenarios": {
+      "garment_waist_shaping": {
+        "method": "Decrease from bust to waist, then increase from waist to hip",
+        "spacing": "Distribute decreases/increases evenly around circumference"
+      },
+      "sleeve_shaping": {
+        "method": "Increase from wrist to underarm for fitted sleeve",
+        "rate": "Typically increase 2 stitches every few rows"
+      },
+      "hat_crown_to_brim": {
+        "crown": "Start with flat circle to desired diameter",
+        "transition": "Work even rounds for sides",
+        "brim": "May increase slightly for flare or work even for straight"
+      },
+      "circular_vs_flat_shaping": {
+        "circular": "Increases/decreases distributed evenly around",
+        "flat": "Increases/decreases typically at edges or specific points"
+      }
+    },
+    "troubleshooting": {
+      "lumpy_increases": "Stagger placement in subsequent rounds",
+      "holes_at_decreases": "Use invisible decrease technique",
+      "uneven_edges": "Count stitches frequently and use stitch markers",
+      "curling_fabric": "Adjust hook size or use different edge treatment"
+    }
+  }
+}
